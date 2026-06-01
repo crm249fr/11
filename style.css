@@ -1,0 +1,543 @@
+/* ========== ГЛОБАЛЬНЫЕ СТИЛИ ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0b0c2a 0%, #1a1f3a 100%);
+    color: #f0f0f0;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== ШАПКА И НАВИГАЦИЯ (Flexbox) ========== */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 20px 5%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.header-content h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+.header-content h1 i {
+    color: #ffaa44;
+    margin-right: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-menu li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-menu li a i {
+    font-size: 1.1rem;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    background: #ffaa44;
+    color: #0b0c2a;
+    box-shadow: 0 0 8px rgba(255,170,68,0.6);
+}
+
+/* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Стили для index.html */
+.intro, .facts, .cta {
+    background: rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+h2 {
+    color: #ffaa44;
+    margin-bottom: 20px;
+    border-left: 4px solid #ffaa44;
+    padding-left: 15px;
+}
+
+.facts ul li {
+    margin: 12px 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.facts ul li i {
+    color: #ffaa44;
+    width: 24px;
+}
+
+.cta-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: #ffaa44;
+    color: #0b0c2a;
+    padding: 10px 24px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #ffaa44;
+    color: #ffaa44;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(255,170,68,0.4);
+}
+
+/* ========== СТРАНИЦА ГАЛЕРЕИ (CSS GRID) ========== */
+.gallery-container {
+    max-width: 1300px;
+}
+
+.controls-panel {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.stats {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: #1e2342;
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-weight: bold;
+}
+
+.view-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.view-btn {
+    background: #2a2f4f;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 1rem;
+}
+
+.view-btn.active {
+    background: #ffaa44;
+    color: #0b0c2a;
+}
+
+.filters {
+    background: rgba(0,0,0,0.4);
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.filter-btn {
+    background: #1e2342;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #ffaa44;
+    color: #0b0c2a;
+}
+
+/* Grid-сетка */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Вид списком */
+.gallery-grid.list-view {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Карточка изображения */
+.image-card {
+    background: #11132a;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.image-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.card-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.image-card:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.image-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.like-btn, .zoom-btn {
+    background: rgba(0,0,0,0.7);
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: 0.2s;
+}
+
+.like-btn.liked {
+    background: #ff6b8b;
+    color: white;
+}
+
+.zoom-btn:hover {
+    background: #ffaa44;
+    color: black;
+}
+
+.card-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.image-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #ffaa44;
+}
+
+.image-date {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 12px;
+}
+
+.image-description {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.image-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: #2a2f4f;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+.gallery-info {
+    background: linear-gradient(135deg, #2a1a4a, #1a2a4a);
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ========== СТРАНИЦА КОНТАКТОВ (псевдоклассы/псевдоэлементы) ========== */
+.contacts-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.info-card, .form-card, .extra-info {
+    background: rgba(10, 12, 30, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.contact-detail {
+    margin: 15px 0;
+}
+
+.social-links {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links li a {
+    color: #ffaa44;
+    text-decoration: none;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.social-links li a:hover {
+    color: white;
+    text-shadow: 0 0 4px #ffaa44;
+}
+
+/* Форма – псевдоклассы и псевдоэлементы */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.required-star {
+    color: #ff6b8b;
+}
+
+/* Псевдоэлемент ::after для обязательных полей */
+label[for="name"]::after,
+label[for="email"]::after,
+label[for="message"]::after,
+.checkbox-group label::after {
+    content: " *";
+    color: #ff6b8b;
+    font-weight: bold;
+}
+
+/* Псевдоэлемент ::before для иконок в инпутах (декорация) */
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: #1e1f3a;
+    border: 1px solid #3a3f6e;
+    border-radius: 14px;
+    color: white;
+    font-family: inherit;
+    transition: 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #ffaa44;
+    box-shadow: 0 0 8px rgba(255,170,68,0.5);
+}
+
+/* Псевдокласс :required – рамка */
+input:required, textarea:required {
+    border-left: 4px solid #ffaa44;
+}
+
+/* Псевдокласс :invalid (просто для визуала) */
+input:invalid:not(:placeholder-shown) {
+    border-color: #ff6b8b;
+}
+
+/* Псевдоэлемент ::placeholder */
+::placeholder {
+    color: #8889aa;
+    font-style: italic;
+    transition: 0.2s;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+    opacity: 0.5;
+}
+
+/* Чекбокс и его псевдокласс :checked */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.checkbox-group input {
+    width: 20px;
+    height: 20px;
+    accent-color: #ffaa44;
+}
+
+.checkbox-group input:checked + label {
+    color: #ffaa44;
+}
+
+/* Псевдокласс :nth-child для FAQ (чередование) */
+.faq ul li:nth-child(odd) {
+    background: rgba(255,255,255,0.05);
+    padding: 8px;
+    border-radius: 12px;
+}
+
+/* Псевдоэлемент ::selection */
+::selection {
+    background: #ffaa44;
+    color: #0b0c2a;
+}
+
+.btn-submit {
+    background: #ffaa44;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-submit:hover {
+    background: #ffcc66;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(255,170,68,0.5);
+}
+
+/* ========== ПОДВАЛ ========== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #05061a;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    border-top: 1px solid #2a2f4f;
+}
+
+/* ========== АДАПТИВНОСТЬ (медиа-запросы) ========== */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+    .controls-panel {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .stats {
+        justify-content: center;
+    }
+    .view-controls {
+        justify-content: center;
+    }
+    .contacts-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .btn, .cta-buttons {
+        justify-content: center;
+    }
+    .header-content h1 {
+        font-size: 1.6rem;
+    }
+}
