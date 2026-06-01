@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космический мир | Контакты</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-rocket"></i> Космический мир</h1>
+            <p>Свяжитесь с нами</p>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Галерея</a></li>
+                <li><a href="contacts.html" class="active"><i class="fas fa-envelope"></i> Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contacts-main">
+        <div class="contacts-wrapper">
+            <!-- Информационная карточка -->
+            <div class="info-card">
+                <h2><i class="fas fa-user-astronaut"></i> Разработчик</h2>
+                <p><strong>Дарвиш Диана</strong><br>студентка 1 курса, группа 1ИП‑2‑25</p>
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i> <a href="mailto:diana.space@example.com">diana.space@example.com</a>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-telescope"></i> Специализация: <strong>Астрономия, космическая фотография</strong>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i> Геопозиция: <strong>Москва, Россия</strong>
+                </div>
+                <h3><i class="fas fa-share-alt"></i> Социальные сети</h3>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-telegram"></i> Telegram</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-vk"></i> ВКонтакте</a></li>
+                </ul>
+            </div>
+
+            <!-- Форма обратной связи -->
+            <div class="form-card">
+                <h2><i class="fas fa-paper-plane"></i> Напишите нам</h2>
+                <form action="#" method="post" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Ваше имя <span class="required-star">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required-star">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Тема сообщения</label>
+                        <select id="subject" name="subject">
+                            <option value="question">Вопрос по космосу</option>
+                            <option value="cooperation">Сотрудничество</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение <span class="required-star">*</span></label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Расскажите о вашей идее или вопросе..."></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">Я согласен(на) на обработку персональных данных <span class="required-star">*</span></label>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-shuttle-van"></i> Отправить сообщение</button>
+                </form>
+            </div>
+
+            <!-- Дополнительный блок (FAQ + график) -->
+            <div class="extra-info">
+                <div class="work-schedule">
+                    <h3><i class="fas fa-clock"></i> График доступности</h3>
+                    <p><strong>Онлайн-консультации:</strong><br>
+                    Пн–Пт: 10:00 – 18:00 (МСК)<br>
+                    Сб: 12:00 – 16:00<br>
+                    Вс: выходной</p>
+                </div>
+                <div class="faq">
+                    <h3><i class="fas fa-question-circle"></i> FAQ</h3>
+                    <ul>
+                        <li><strong>Можно ли использовать ваши фото?</strong> – Да, при условии указания авторства.</li>
+                        <li><strong>Вы проводите лекции?</strong> – Да, онлайн-лекции по астрономии, пишите в форму.</li>
+                        <li><strong>Как получить индивидуальную консультацию?</strong> – Заполните форму или напишите в соцсети.</li>
+                    </ul>
+                </div>
+                <div class="instruction">
+                    <h3><i class="fas fa-info-circle"></i> Инструкция по связи</h3>
+                    <p>1. Заполните форму обратной связи.<br>
+                    2. Дождитесь ответа на email (обычно в течение 24 часов).<br>
+                    3. Если срочно – пишите в Telegram или звоните через соцсети.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Дарвиш Диана, студентка группы 1ИП‑2‑25</p>
+        <p><i class="fas fa-moon"></i> Вселенная ждёт тебя! <i class="fas fa-saturn"></i></p>
+    </footer>
+</body>
+</html>
